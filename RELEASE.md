@@ -1,4 +1,4 @@
-# Simple Redirection Plugin - Release Notes
+# Easy Redirection Plugin - Release Notes
 
 ## Version 1.0.0 - Initial Release
 *Release Date: [Current Date]*
@@ -12,7 +12,7 @@
 - **Real-time Redirect Tracking**: Track redirect count and last access time for each slug
 
 #### Admin Interface
-- **Intuitive Dashboard**: Clean, user-friendly admin interface under "Simple Redirect" menu
+- **Intuitive Dashboard**: Clean, user-friendly admin interface under "Easy Redirect" menu
 - **Quick Creation Form**: Simple form at the top of the page for creating new redirects
 - **Comprehensive List View**: Table showing all redirects with key information
 - **One-Click Copy**: Copy full redirect URLs to clipboard with a single click
@@ -50,7 +50,7 @@ Each redirect includes:
 
 1. Upload plugin files to `/wp-content/plugins/simple-redirection/`
 2. Activate the plugin through the WordPress admin
-3. Navigate to "Simple Redirect" in the admin menu
+3. Navigate to "Easy Redirect" in the admin menu
 4. Start creating your custom redirects!
 
 ### 📁 File Structure
@@ -88,7 +88,7 @@ simple-redirection/
 
 ### 📝 Usage Examples
 
-**Simple Redirect:**
+**Easy Redirect:**
 - Slug: `contact`
 - Target: `https://example.com/contact-us`
 - Result: `yoursite.com/contact` → `https://example.com/contact-us`
@@ -109,24 +109,24 @@ simple-redirection/
 ### 👥 Credits
 
 **Authors:** Atipat Lorwongam and Claude Sonnet 4  
-**Repository:** https://github.com/luozongbao/simple-redirection/  
+**Repository:** https://github.com/luozongbao/easy-redirection.git  
 **License:** GPL v2 or later
 
 ### 📞 Support
 
 For support, bug reports, or feature requests:
-- Visit our [GitHub repository](https://github.com/luozongbao/simple-redirection/)
+- Visit our [GitHub repository](https://github.com/luozongbao/easy-redirection.git)
 - Create an issue with detailed information
 - Check existing issues for solutions
 
 ### 🎯 Getting Started
 
 1. **Install & Activate** the plugin
-2. **Go to Simple Redirect** in your WordPress admin
+2. **Go to Easy Redirect** in your WordPress admin
 3. **Create your first redirect** using the form at the top
 4. **Test the redirect** using the "Test" button
 5. **Monitor usage** through the Count and Last Called columns
 
 ---
 
-*Thank you for using Simple Redirection! We hope this plugin makes managing your redirects simple and efficient.*
+*Thank you for using Easy Redirection! We hope this plugin makes managing your redirects simple and efficient.*

@@ -1,11 +1,11 @@
 <?php
 /**
- * Plugin Name: Simple Redirection
- * Plugin URI: https://github.com/luozongbao/simple-redirection/
+ * Plugin Name: Easy Redirection
+ * Plugin URI: https://github.com/luozongbao/easy-redirection.git
  * Description: A simple plugin to create custom slugs with redirection functionality, supporting WordPress and WordPress Multisite.
  * Version: 1.0.0
  * Author: Atipat Lorwongam and Claude Sonnet 4
- * Author URI: https://github.com/luozongbao/simple-redirection/
+ * Author URI: https://github.com/luozongbao/easy-redirection.git
  * License: GPL v2 or later
  * Network: true
  */
@@ -26,7 +26,7 @@ class WordPressSimpleRedirect {
     
     public function __construct() {
         global $wpdb;
-        $this->table_name = $wpdb->prefix . 'simple_redirects';
+        $this->table_name = $wpdb->prefix . 'easy_redirects';
         
         // Hook into WordPress
         add_action('init', array($this, 'init'));
@@ -93,12 +93,12 @@ class WordPressSimpleRedirect {
             $sites = get_sites();
             foreach ($sites as $site) {
                 switch_to_blog($site->blog_id);
-                $table_name = $wpdb->prefix . 'simple_redirects';
+                $table_name = $wpdb->prefix . 'easy_redirects';
                 $wpdb->query("DROP TABLE IF EXISTS $table_name");
                 restore_current_blog();
             }
         } else {
-            $table_name = $wpdb->prefix . 'simple_redirects';
+            $table_name = $wpdb->prefix . 'easy_redirects';
             $wpdb->query("DROP TABLE IF EXISTS $table_name");
         }
         
@@ -130,10 +130,10 @@ class WordPressSimpleRedirect {
     
     public function add_admin_menu() {
         add_menu_page(
-            'Simple Redirection',
-            'Simple Redirect',
+            'Easy Redirection',
+            'Easy Redirect',
             'manage_options',
-            'simple-redirection',
+            'easy-redirection',
             array($this, 'admin_page'),
             'dashicons-admin-links',
             30
@@ -141,7 +141,7 @@ class WordPressSimpleRedirect {
     }
     
     public function enqueue_admin_scripts($hook) {
-        if ($hook !== 'toplevel_page_simple-redirection') {
+        if ($hook !== 'toplevel_page_easy-redirection') {
             return;
         }
         

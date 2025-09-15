@@ -1,4 +1,4 @@
-# Simple Redirection
+# Easy Redirection
 
 A simple and powerful WordPress plugin that allows you to create custom slugs with URL redirection functionality. Perfect for managing short URLs, affiliate links, and custom redirections on your WordPress or WordPress Multisite installation.
 
@@ -26,7 +26,7 @@ A simple and powerful WordPress plugin that allows you to create custom slugs wi
 1. Download the plugin files
 2. Upload the `simple-redirection` folder to your `/wp-content/plugins/` directory
 3. Activate the plugin through the 'Plugins' menu in WordPress
-4. Navigate to **Simple Redirect** in your WordPress admin menu
+4. Navigate to **Easy Redirect** in your WordPress admin menu
 
 ### Method 2: WordPress Admin
 
@@ -38,7 +38,7 @@ A simple and powerful WordPress plugin that allows you to create custom slugs wi
 
 ### Creating a New Redirect
 
-1. Go to **Simple Redirect** in your WordPress admin menu
+1. Go to **Easy Redirect** in your WordPress admin menu
 2. Fill in the form at the top of the page:
    - **Slug**: Enter your custom slug (e.g., `my-link` or `category/product`)
    - **Target URL**: Enter the destination URL (e.g., `https://example.com`)
