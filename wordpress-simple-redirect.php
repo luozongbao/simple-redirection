@@ -37,8 +37,8 @@ class WordPressSimpleRedirect {
         add_action('wp_ajax_wsr_toggle_status', array($this, 'ajax_toggle_status'));
         add_action('wp_ajax_wsr_test_redirect', array($this, 'ajax_test_redirect'));
         
-        // Handle redirects
-        add_action('template_redirect', array($this, 'handle_redirect'));
+        // Handle redirects - use earlier hook with higher priority
+        add_action('parse_request', array($this, 'handle_redirect'), 1);
         
         // Activation and deactivation hooks
         register_activation_hook(__FILE__, array($this, 'activate'));
@@ -51,6 +51,17 @@ class WordPressSimpleRedirect {
         if (is_admin()) {
             add_action('admin_enqueue_scripts', array($this, 'enqueue_admin_scripts'));
         }
+        
+        // Add rewrite rule to catch all requests
+        add_rewrite_rule('^(.+)/?$', 'index.php?wsr_slug=$matches[1]', 'top');
+        
+        // Add query var
+        add_filter('query_vars', array($this, 'add_query_vars'));
+    }
+    
+    public function add_query_vars($vars) {
+        $vars[] = 'wsr_slug';
+        return $vars;
     }
     
     public function activate() {
@@ -65,10 +76,14 @@ class WordPressSimpleRedirect {
                 restore_current_blog();
             }
         }
+        
+        // Flush rewrite rules
+        flush_rewrite_rules();
     }
     
     public function deactivate() {
-        // Clean up if needed
+        // Flush rewrite rules
+        flush_rewrite_rules();
     }
     
     public static function uninstall() {
@@ -86,6 +101,9 @@ class WordPressSimpleRedirect {
             $table_name = $wpdb->prefix . 'simple_redirects';
             $wpdb->query("DROP TABLE IF EXISTS $table_name");
         }
+        
+        // Flush rewrite rules
+        flush_rewrite_rules();
     }
     
     private function create_table() {
@@ -188,6 +206,9 @@ class WordPressSimpleRedirect {
         if ($result === false) {
             wp_send_json_error('Failed to create slug.');
         }
+        
+        // Flush rewrite rules to ensure new slug works immediately
+        flush_rewrite_rules();
         
         wp_send_json_success('Slug created successfully.');
     }
@@ -307,29 +328,44 @@ class WordPressSimpleRedirect {
         wp_send_json_success(array('target_url' => $slug_data->target_url));
     }
     
-    public function handle_redirect() {
+    public function handle_redirect($wp) {
         global $wpdb;
         
-        $request_uri = $_SERVER['REQUEST_URI'];
-        $site_url = parse_url(home_url(), PHP_URL_PATH);
+        // Get the requested slug from query var
+        $requested_slug = get_query_var('wsr_slug');
         
-        // Remove site path from request URI
-        if ($site_url && $site_url !== '/') {
-            $request_uri = str_replace($site_url, '', $request_uri);
+        // If no slug in query var, try to get from REQUEST_URI
+        if (empty($requested_slug)) {
+            $request_uri = $_SERVER['REQUEST_URI'];
+            
+            // Remove query string
+            $request_uri = strtok($request_uri, '?');
+            
+            // Get the site's base path
+            $site_url_parts = parse_url(home_url());
+            $site_path = isset($site_url_parts['path']) ? $site_url_parts['path'] : '';
+            
+            // Remove site path from request URI
+            if (!empty($site_path) && $site_path !== '/') {
+                $request_uri = str_replace($site_path, '', $request_uri);
+            }
+            
+            // Remove leading and trailing slashes
+            $requested_slug = trim($request_uri, '/');
         }
         
-        // Remove leading slash
-        $request_uri = ltrim($request_uri, '/');
+        // If still empty, return
+        if (empty($requested_slug)) {
+            return;
+        }
         
-        // Remove query string
-        $request_uri = strtok($request_uri, '?');
-        
-        if (empty($request_uri)) {
+        // Don't redirect admin, wp-content, wp-includes, etc.
+        if (preg_match('/^(wp-admin|wp-content|wp-includes|xmlrpc\.php|wp-login\.php)/', $requested_slug)) {
             return;
         }
         
         // Check if this matches any of our slugs
-        $slug_data = $wpdb->get_row($wpdb->prepare("SELECT * FROM $this->table_name WHERE slug = %s AND status = 'active'", $request_uri));
+        $slug_data = $wpdb->get_row($wpdb->prepare("SELECT * FROM $this->table_name WHERE slug = %s AND status = 'active'", $requested_slug));
         
         if ($slug_data) {
             // Update redirect count and last called time
