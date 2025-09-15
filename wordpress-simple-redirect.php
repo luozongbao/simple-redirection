@@ -115,7 +115,6 @@ class WordPressSimpleRedirect {
             id mediumint(9) NOT NULL AUTO_INCREMENT,
             slug varchar(255) NOT NULL,
             target_url text NOT NULL,
-            description text,
             redirect_count int(11) DEFAULT 0,
             last_called datetime NULL,
             status enum('active','inactive') DEFAULT 'active',
@@ -176,7 +175,6 @@ class WordPressSimpleRedirect {
         
         $slug = sanitize_text_field($_POST['slug']);
         $target_url = esc_url_raw($_POST['target_url']);
-        $description = sanitize_textarea_field($_POST['description']);
         
         // Validate inputs
         if (empty($slug) || empty($target_url)) {
@@ -197,10 +195,9 @@ class WordPressSimpleRedirect {
             $this->table_name,
             array(
                 'slug' => $slug,
-                'target_url' => $target_url,
-                'description' => $description
+                'target_url' => $target_url
             ),
-            array('%s', '%s', '%s')
+            array('%s', '%s')
         );
         
         if ($result === false) {
@@ -225,7 +222,6 @@ class WordPressSimpleRedirect {
         $id = intval($_POST['id']);
         $slug = sanitize_text_field($_POST['slug']);
         $target_url = esc_url_raw($_POST['target_url']);
-        $description = sanitize_textarea_field($_POST['description']);
         
         // Validate inputs
         if (empty($slug) || empty($target_url)) {
@@ -246,11 +242,10 @@ class WordPressSimpleRedirect {
             $this->table_name,
             array(
                 'slug' => $slug,
-                'target_url' => $target_url,
-                'description' => $description
+                'target_url' => $target_url
             ),
             array('id' => $id),
-            array('%s', '%s', '%s'),
+            array('%s', '%s'),
             array('%d')
         );
         

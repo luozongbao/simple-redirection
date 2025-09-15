@@ -18,8 +18,7 @@ jQuery(document).ready(function($) {
                 action: 'wsr_create_slug',
                 nonce: wsr_ajax.nonce,
                 slug: $('#slug').val(),
-                target_url: $('#target_url').val(),
-                description: $('#description').val()
+                target_url: $('#target_url').val()
             },
             success: function(response) {
                 if (response.success) {
@@ -54,13 +53,11 @@ jQuery(document).ready(function($) {
         // Get current values from the row
         var slug = $row.find('td:first strong').text();
         var targetUrl = $row.find('td:nth-child(2) a').attr('href');
-        var description = $row.find('td:nth-child(3)').text();
         
         // Populate edit form
         $('#edit-id').val(id);
         $('#edit-slug').val(slug);
         $('#edit-target_url').val(targetUrl);
-        $('#edit-description').val(description);
         
         // Show modal
         $('#wsr-edit-modal').show();
@@ -85,8 +82,7 @@ jQuery(document).ready(function($) {
                 nonce: wsr_ajax.nonce,
                 id: $('#edit-id').val(),
                 slug: $('#edit-slug').val(),
-                target_url: $('#edit-target_url').val(),
-                description: $('#edit-description').val()
+                target_url: $('#edit-target_url').val()
             },
             success: function(response) {
                 if (response.success) {

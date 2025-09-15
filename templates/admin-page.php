@@ -20,13 +20,6 @@
                         <p class="description">The URL to redirect to</p>
                     </td>
                 </tr>
-                <tr>
-                    <th scope="row"><label for="description">Description</label></th>
-                    <td>
-                        <textarea id="description" name="description" class="large-text" rows="3" placeholder="Optional description"></textarea>
-                        <p class="description">Optional description for this redirect</p>
-                    </td>
-                </tr>
             </table>
             <p class="submit">
                 <input type="submit" class="button-primary" value="Create Redirect">
@@ -46,7 +39,6 @@
                     <tr>
                         <th>Slug</th>
                         <th>Target URL</th>
-                        <th>Description</th>
                         <th>Count</th>
                         <th>Last Called</th>
                         <th>Status</th>
@@ -69,7 +61,6 @@
                                     <?php echo esc_html($slug->target_url); ?>
                                 </a>
                             </td>
-                            <td><?php echo esc_html($slug->description); ?></td>
                             <td><?php echo esc_html($slug->redirect_count); ?></td>
                             <td>
                                 <?php 
@@ -122,12 +113,6 @@
                         <th scope="row"><label for="edit-target_url">Target URL</label></th>
                         <td>
                             <input type="url" id="edit-target_url" name="target_url" class="regular-text" required>
-                        </td>
-                    </tr>
-                    <tr>
-                        <th scope="row"><label for="edit-description">Description</label></th>
-                        <td>
-                            <textarea id="edit-description" name="description" class="large-text" rows="3"></textarea>
                         </td>
                     </tr>
                 </table>
