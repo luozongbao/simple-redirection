@@ -1,5 +1,5 @@
 <div class="wrap">
-    <h1>Simple Redirection</h1>
+    <h1>Easy Redirection</h1>
     
     <!-- Create New Slug Form -->
     <div class="wsr-form-container">
