@@ -1,6 +1,6 @@
 <?php
 /**
- * Plugin Name: WordPress Simple Redirect
+ * Plugin Name: Simple Redirection
  * Plugin URI: https://github.com/luozongbao/wordpress-redirection/
  * Description: A simple plugin to create custom slugs with redirection functionality, supporting WordPress and WordPress Multisite.
  * Version: 1.0.0
@@ -130,10 +130,10 @@ class WordPressSimpleRedirect {
     
     public function add_admin_menu() {
         add_menu_page(
-            'WordPress Simple Redirect',
+            'Simple Redirection',
             'Simple Redirect',
             'manage_options',
-            'wordpress-simple-redirect',
+            'simple-redirection',
             array($this, 'admin_page'),
             'dashicons-admin-links',
             30
@@ -141,7 +141,7 @@ class WordPressSimpleRedirect {
     }
     
     public function enqueue_admin_scripts($hook) {
-        if ($hook !== 'toplevel_page_wordpress-simple-redirect') {
+        if ($hook !== 'toplevel_page_simple-redirection') {
             return;
         }
         

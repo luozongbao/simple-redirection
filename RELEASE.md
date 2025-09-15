@@ -1,4 +1,4 @@
-# WordPress Simple Redirect Plugin - Release Notes
+# Simple Redirection Plugin - Release Notes
 
 ## Version 1.0.0 - Initial Release
 *Release Date: [Current Date]*
@@ -48,7 +48,7 @@ Each redirect includes:
 
 ### 🛠️ Installation
 
-1. Upload plugin files to `/wp-content/plugins/wordpress-simple-redirect/`
+1. Upload plugin files to `/wp-content/plugins/simple-redirection/`
 2. Activate the plugin through the WordPress admin
 3. Navigate to "Simple Redirect" in the admin menu
 4. Start creating your custom redirects!
@@ -56,8 +56,8 @@ Each redirect includes:
 ### 📁 File Structure
 
 ```
-wordpress-simple-redirect/
-├── wordpress-simple-redirect.php    # Main plugin file
+simple-redirection/
+├── simple-redirection.php           # Main plugin file
 ├── templates/
 │   └── admin-page.php               # Admin interface template
 └── assets/
@@ -129,4 +129,4 @@ For support, bug reports, or feature requests:
 
 ---
 
-*Thank you for using WordPress Simple Redirect! We hope this plugin makes managing your redirects simple and efficient.*
+*Thank you for using Simple Redirection! We hope this plugin makes managing your redirects simple and efficient.*

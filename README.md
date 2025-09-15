@@ -1,4 +1,4 @@
-# WordPress Simple Redirect
+# Simple Redirection
 
 A simple and powerful WordPress plugin that allows you to create custom slugs with URL redirection functionality. Perfect for managing short URLs, affiliate links, and custom redirections on your WordPress or WordPress Multisite installation.
 
@@ -116,8 +116,8 @@ The plugin provides a clean, intuitive admin interface featuring:
 ## 📁 File Structure
 
 ```
-wordpress-redirection/
-├── wordpress-simple-redirect.php    # Main plugin file
+simple-redirection/
+├── simple-redirection.php           # Main plugin file
 ├── assets/
 │   ├── admin.css                   # Admin interface styles
 │   └── admin.js                    # Admin interface JavaScript
