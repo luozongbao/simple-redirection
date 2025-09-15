@@ -24,7 +24,7 @@ A simple and powerful WordPress plugin that allows you to create custom slugs wi
 ### Method 1: Manual Installation
 
 1. Download the plugin files
-2. Upload the `wordpress-redirection` folder to your `/wp-content/plugins/` directory
+2. Upload the `simple-redirection` folder to your `/wp-content/plugins/` directory
 3. Activate the plugin through the 'Plugins' menu in WordPress
 4. Navigate to **Simple Redirect** in your WordPress admin menu
 
@@ -160,7 +160,7 @@ This project is licensed under the GPL v2 or later - see the [WordPress Plugin L
 
 If you encounter any issues or have questions:
 
-1. Check the [GitHub Issues](https://github.com/luozongbao/wordpress-redirection/issues)
+1. Check the [GitHub Issues](https://github.com/luozongbao/simple-redirection/issues)
 2. Create a new issue if your problem isn't already reported
 3. Provide detailed information about your WordPress version, plugin version, and the issue
 

@@ -1,6 +1,6 @@
 I want to create a wordpress plugin to create slug and redirect visitor to a target url.  the plugin should be called "Simple Redirection"  The slug should also accept "/". There should be a page that list all the slug we created, at the top of the page has a form to create new slug, target url, and description (optional).  in the list shows the slug column(and copy full link with slug to snippet), the Target Url column, Count column showing number of time the slug is called, Last Called column showing date and time the link is last called.  Each item in the list should also have buttons to interaction with the slug items such as "Edit" to edit those 3 prameters, "Delete" to delete the slug, "Disable"/"Enable" to temporary disable/enable the redirection of the slug, "Test Redirection" to browse the slug and redirection to the target url (on different tab) with out counting the redirect counter. The plugin should work with wordpress site and wordpress multisite.  On uninstall remove the plugin database cleanly.
 
 Author: Atipat Lorwongam and (AI Model Name)
-Plugin URL: https://github.com/luozongbao/wordpress-redirection/
+Plugin URL: https://github.com/luozongbao/simple-redirection/
 
 From above requirements help create this plugin for me.

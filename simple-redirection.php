@@ -1,11 +1,11 @@
 <?php
 /**
  * Plugin Name: Simple Redirection
- * Plugin URI: https://github.com/luozongbao/wordpress-redirection/
+ * Plugin URI: https://github.com/luozongbao/simple-redirection/
  * Description: A simple plugin to create custom slugs with redirection functionality, supporting WordPress and WordPress Multisite.
  * Version: 1.0.0
  * Author: Atipat Lorwongam and Claude Sonnet 4
- * Author URI: https://github.com/luozongbao/wordpress-redirection/
+ * Author URI: https://github.com/luozongbao/simple-redirection/
  * License: GPL v2 or later
  * Network: true
  */
