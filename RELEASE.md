@@ -109,13 +109,13 @@ simple-redirection/
 ### 👥 Credits
 
 **Authors:** Atipat Lorwongam and Claude Sonnet 4  
-**Repository:** https://github.com/luozongbao/wordpress-redirection/  
+**Repository:** https://github.com/luozongbao/simple-redirection/  
 **License:** GPL v2 or later
 
 ### 📞 Support
 
 For support, bug reports, or feature requests:
-- Visit our [GitHub repository](https://github.com/luozongbao/wordpress-redirection/)
+- Visit our [GitHub repository](https://github.com/luozongbao/simple-redirection/)
 - Create an issue with detailed information
 - Check existing issues for solutions
 
