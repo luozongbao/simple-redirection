@@ -1,0 +1,152 @@
+/* WordPress Simple Redirect Admin Styles */
+
+.wsr-form-container {
+    background: #fff;
+    border: 1px solid #ccd0d4;
+    box-shadow: 0 1px 1px rgba(0,0,0,.04);
+    margin: 20px 0;
+    padding: 20px;
+}
+
+.wsr-form-container h2 {
+    margin-top: 0;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #eee;
+}
+
+.wsr-list-container {
+    margin-top: 30px;
+}
+
+.status-badge {
+    padding: 3px 8px;
+    border-radius: 3px;
+    font-size: 11px;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+.status-active {
+    background-color: #d4edda;
+    color: #155724;
+}
+
+.status-inactive {
+    background-color: #f8d7da;
+    color: #721c24;
+}
+
+/* Modal Styles */
+.wsr-modal {
+    position: fixed;
+    z-index: 100000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.5);
+}
+
+.wsr-modal-content {
+    background-color: #fefefe;
+    margin: 5% auto;
+    border: 1px solid #888;
+    width: 80%;
+    max-width: 600px;
+    border-radius: 4px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+.wsr-modal-header {
+    padding: 20px;
+    background-color: #f1f1f1;
+    border-bottom: 1px solid #ddd;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 4px 4px 0 0;
+}
+
+.wsr-modal-header h2 {
+    margin: 0;
+}
+
+.wsr-modal-close {
+    color: #aaa;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+    line-height: 1;
+}
+
+.wsr-modal-close:hover,
+.wsr-modal-close:focus {
+    color: #000;
+    text-decoration: none;
+}
+
+.wsr-modal-body {
+    padding: 20px;
+}
+
+/* Copy notification */
+#wsr-copy-notification {
+    position: fixed;
+    top: 32px;
+    right: 20px;
+    z-index: 100001;
+    min-width: 200px;
+}
+
+/* Button spacing */
+.wp-list-table .button {
+    margin-right: 5px;
+}
+
+.wp-list-table .button:last-child {
+    margin-right: 0;
+}
+
+/* Loading state */
+.wsr-loading {
+    opacity: 0.6;
+    pointer-events: none;
+}
+
+/* Copy slug link */
+.copy-slug {
+    text-decoration: none;
+    color: #0073aa;
+}
+
+.copy-slug:hover {
+    color: #005177;
+}
+
+/* Table improvements */
+.wp-list-table th,
+.wp-list-table td {
+    vertical-align: middle;
+}
+
+.wp-list-table .row-actions {
+    margin-top: 5px;
+}
+
+/* Responsive */
+@media (max-width: 782px) {
+    .wsr-modal-content {
+        width: 95%;
+        margin: 10% auto;
+    }
+    
+    .wp-list-table .button {
+        margin-bottom: 5px;
+        display: block;
+        text-align: center;
+    }
+    
+    .wp-list-table td {
+        padding: 8px 10px;
+    }
+}
